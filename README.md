@@ -48,7 +48,7 @@ Una API RESTful construida con **Node.js**, **Express**, y **MySQL** para gestio
 1. Clona el repositorio
 
 ```bash
-git clone 
+git clone  https://github.com/AndersoCh/sistema-votaciones
 cd sistema-votaciones
 
 
