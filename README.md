@@ -143,18 +143,24 @@ Registra un votante:
 
  POST http://localhost:3000/voters
     Body (JSON):
-    {
-    "name": "Anderson Chavarría",
-    "email": "anderson@example.com",
-    "dni": "12345678"
-    }
+      {
+      "name": "Anderson Chavarría",
+      "email": "anderson@example.com",
+      "dni": "12345678"
+      }
 
+    Obtener votantes filtrados por nombre y paginados
+      GET /voters?search=anderson&page=1&limit=5
+    Ejemplo:  GET http://localhost:3000/voters?search=anderson&page=1&limit=5
+
+ 
 Login:
    POST http://localhost:3000/login
     {
     "email": "anderson@example.com",
     "dni": "12345678"
     }
+
 Crear candidato (requiere token):
    POST http://localhost:3000/candidates
     Headers: Authorization: Bearer <token>
@@ -164,6 +170,12 @@ Crear candidato (requiere token):
     "dni": "88889999"
     }   
 
+   Obtener candidatos filtrados por partido
+     GET /candidates?search=verde
+   Ejemplo:
+    GET http://localhost:3000/candidates?search=verde&page=2&limit=3
+
+     
  Votar:
    POST http://localhost:3000/votes
     Headers: Authorization: Bearer <token>
@@ -171,6 +183,8 @@ Crear candidato (requiere token):
     "candidateId": 2,
     "voter_id": 1
     }
+
+
  🔧 To-do / Mejoras
 
     - [ ] Agregar actualización de datos (PUT)
